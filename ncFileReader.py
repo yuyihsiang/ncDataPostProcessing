@@ -97,7 +97,7 @@ def uvDirData(data, csvData,layerNum):
     currentDir = currentDir.flatten()    
     u = np.array(u[0, layerNum, :, :])
     u = u.flatten()    
-    currentDir = [999.99 if ele > 100 else ele for ele in u]
+    currentDir = [999.99*np.pi/180 if ele > 100 else ele for ele in u]
     currentDir = 180/np.pi*np.array(currentDir[:])
 
     csvData = np.column_stack((csvData, currentDir))
@@ -212,7 +212,7 @@ print("處理海洋漁業_蟳蟹_海表水溫")
 processTemp(dataList=filename3D,outputFileName='蟳蟹海表水溫.csv',layerLoc=0,filterRange=filterRange)
 
 print("處理海洋漁業_蟳蟹_海底洋流流向")
-processUVDir(dataList=filename3D,outputFileName='蟳蟹海表洋流流向.csv',layerLoc=0,filterRange=filterRange)
+processUVDir(dataList=filename3D,outputFileName='蟳蟹海底洋流流向.csv',layerLoc=1,filterRange=filterRange)
 # #############################################
 
 
@@ -223,8 +223,8 @@ filterRange=[22, 28, 119, 123]
 print("處理海洋漁業_烏魚_海表水溫")
 processTemp(dataList=filename3D,outputFileName='烏魚海表水溫.csv',layerLoc=0,filterRange=filterRange)
 
-print("處理海洋漁業_烏魚_海底洋流流向")
-processUVDir(dataList=filename3D,outputFileName='烏魚海底洋流流向.csv',layerLoc=1,filterRange=filterRange)
+print("處理海洋漁業_烏魚_海表洋流流向")
+processUVDir(dataList=filename3D,outputFileName='烏魚海表洋流流向.csv',layerLoc=0,filterRange=filterRange)
 
 print("處理海洋漁業_烏魚_海面高度")
 processSSH(dataList=filename2D,outputFileName='烏魚海面高度.csv',filterRange=filterRange)
