@@ -325,7 +325,7 @@ def processmixthick(dataList, outputFileName, addtimes,filterRange=None,):
 filename3D_day = fileNameList("12_3z.nc")
 filterRange_crab = [25, 26, 120.4, 121.4]
 print("處理海洋漁業_蟳蟹_海底水溫")
-processTemp(dataList=filename3D_day, outputFileName='csvOutput/蟳蟹海水溫.csv', layerLoc=-1,filterRange=filterRange_crab,add_times=1)
+processTemp(dataList=filename3D_day, outputFileName='csvOutput/蟳蟹海底水溫.csv', layerLoc=-1,filterRange=filterRange_crab,add_times=1)
 
 ##蟳蟹海底洋流流向
 print("處理海洋漁業_蟳蟹_海底洋流流向")
